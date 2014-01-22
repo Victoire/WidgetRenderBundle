@@ -1,0 +1,17 @@
+{% block body %}
+
+{#
+
+#}
+
+<div class="vic-widget" id="widget-{{widget.id}}">
+{% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
+
+{% block content %}
+{#Booya ! Replace this default rendering by your own logic#}
+{% render(path(widget.route, widget.params)) %}
+{#Enjoy !#}
+{% endblock content %}
+</div>
+
+{% endblock body %}

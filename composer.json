@@ -17,8 +17,8 @@
         "victoire/cms-bundle"                : "1.0.*@dev"
     },
     "autoload": {
-        "psr-0": { "Victoire\\Widget\\RenderBundle": "" }
+        "psr-0": { "Victoire\\RenderBundle": "" }
     },
     "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/RenderBundle"
+    "target-dir": "Victoire/RenderBundle"
 }

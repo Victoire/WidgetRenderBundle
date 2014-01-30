@@ -1,5 +1,5 @@
 <?php
-namespace Victoire\RenderBundle\Entity;
+namespace Victoire\Widget\RenderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\CmsBundle\Entity\Widget;

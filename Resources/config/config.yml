@@ -1,5 +1,5 @@
 victoire_cms:
     widgets:
         render:
-            class: "Victoire\\RenderBundle\\Entity\\WidgetRender"
+            class: "Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender"
             name: render

@@ -1,6 +1,6 @@
 <?php
 
-namespace Victoire\RenderBundle\Form;
+namespace Victoire\Widget\RenderBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -47,7 +47,7 @@ class WidgetRenderType extends WidgetType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class'         => 'Victoire\RenderBundle\Entity\WidgetRender',
+            'data_class'         => 'Victoire\Widget\RenderBundle\Entity\WidgetRender',
             'widget'             => 'render',
             'translation_domain' => 'victoire'
         ));

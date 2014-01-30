@@ -1,10 +1,10 @@
 <?php
 
-namespace Victoire\RenderBundle\Widget\Manager;
+namespace Victoire\Widget\RenderBundle\Widget\Manager;
 
 
-use Victoire\RenderBundle\Form\WidgetRenderType;
-use Victoire\RenderBundle\Entity\WidgetRender;
+use Victoire\Widget\RenderBundle\Form\WidgetRenderType;
+use Victoire\Widget\RenderBundle\Entity\WidgetRender;
 
 class WidgetRenderManager
 {
@@ -44,7 +44,7 @@ protected $container;
     public function render($widget)
     {
         return $this->container->get('victoire_templating')->render(
-            "VictoireRenderBundle:Widget:render/show.html.twig",
+            "VictoireWidgetRenderBundle:Widget:render/show.html.twig",
             array(
                 "widget" => $widget
             )
@@ -62,7 +62,7 @@ protected $container;
     {
 
         return $this->container->get('victoire_templating')->render(
-            "VictoireRenderBundle:Widget:render/edit.html.twig",
+            "VictoireWidgetRenderBundle:Widget:render/edit.html.twig",
             array(
                 "widget" => $widget,
                 'form'   => $form->createView(),
@@ -100,7 +100,7 @@ protected $container;
     {
 
         return $this->container->get('victoire_templating')->render(
-            "VictoireRenderBundle:Widget:render/new.html.twig",
+            "VictoireWidgetRenderBundle:Widget:render/new.html.twig",
             array(
                 "widget"          => $widget,
                 'form'            => $form->createView(),

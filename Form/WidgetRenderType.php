@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\CmsBundle\Form\EntityProxyFormType;
 use Victoire\CmsBundle\Form\WidgetType;
+use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
 
 /**
@@ -25,11 +26,17 @@ class WidgetRenderType extends WidgetType
         //choose form mode
         if ($this->entity_name === null) {
             //if no entity is given, we generate the static form
+            $transformer = new JsonToArrayTransformer();
             $builder
+                ->add('mode', 'choice', array(
+                    'choices'  => array(
+                        'route'            => 'form.render.mode.choice.route',
+                        'widget_reference' => 'form.render.mode.choice.widget_reference'
+                    )
+                ))
                 ->add('route')
-                ->add('params')
-                //
-                ;
+                ->add($builder->create('params', 'text')->addModelTransformer($transformer))
+                ->add('widget');
 
         } else {
             //else, WidgetType class will embed a EntityProxyType for given entity

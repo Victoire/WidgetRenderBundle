@@ -8,9 +8,14 @@
 {% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
 
 {% block content %}
-{#Booya ! Replace this default rendering by your own logic#}
-{% render(path(widget.route, widget.params)) %}
-{#Enjoy !#}
+
+{% if widget.mode == 'route' %}
+    {% render(path(widget.route, widget.params)) %}
+{% else %}
+    <div class="vic-render-widget-container">
+        {{ cms_widget(widget.widget) }}
+    </div>
+{% endif %}
 {% endblock content %}
 </div>
 

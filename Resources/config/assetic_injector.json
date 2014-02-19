@@ -1,0 +1,12 @@
+{
+    "require_all":
+    {
+        "stylesheets":
+        {
+            "victoire-edit":
+            [
+                "@VictoireWidgetRenderBundle/Resources/style/render.less"
+            ]
+        }
+    }
+}

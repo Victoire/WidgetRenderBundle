@@ -24,14 +24,14 @@ class WidgetRender extends Widget
     /**
      * @var array
      *
-     * @ORM\Column(name="param", type="array", nullable=true)
+     * @ORM\Column(name="params", type="array", nullable=true)
      */
     protected $params;
 
     /**
      * @var array
      *
-     * @ORM\Column(name="mode", type="array")
+     * @ORM\Column(name="mode", type="string", nullable=true)
      */
     protected $mode = "route";
 

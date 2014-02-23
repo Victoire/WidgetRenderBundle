@@ -22,25 +22,24 @@ class JsonToArrayTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transforms a json array into a php array.
-     *
-     * @param  string $json The json array
-     * @return string
-     */
-    public function transform($json)
-    {
-        return json_encode($json);
-    }
-
-    /**
      * Transforms a php array into json array
      *
      * @param  array $array
      * @return json array
      */
-    public function reverseTransform($array = array())
+    public function transform($array = array())
     {
+        return is_array($array) ? json_encode($array) : null;
+    }
 
-        return json_encode($array);
+    /**
+     * Transforms a json array into a php array.
+     *
+     * @param  string $json The json array
+     * @return string
+     */
+    public function reverseTransform($json)
+    {
+        return $json === '' ? null : json_decode($json, true);
     }
 }

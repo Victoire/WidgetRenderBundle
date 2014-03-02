@@ -32,10 +32,13 @@ class WidgetRenderType extends WidgetType
                     'choices'  => array(
                         'route'            => 'form.render.mode.choice.route',
                         'widget_reference' => 'form.render.mode.choice.widget_reference'
-                    )
+                    ),
                 ))
                 ->add('route')
-                ->add($builder->create('params', 'text')->addModelTransformer($transformer))
+                ->add($builder->create('params', 'text', array(
+                    'help_block' => 'form.appventus_victoirecmsbundle_widgetrendertype.children.params.help_block'
+                    )
+                )->addModelTransformer($transformer))
                 ->add('widget');
 
         } else {

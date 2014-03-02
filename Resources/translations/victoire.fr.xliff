@@ -8,19 +8,35 @@
     <body>
       <trans-unit resname="widget.render.new.action.label">
         <source>widget.render.new.action.label</source>
-        <target state="new">Render</target>
+        <target>Render</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.render.label">
         <source>modal.form.widget.type.render.label</source>
-        <target state="new">Render</target>
+        <target>Render</target>
+      </trans-unit>
+      <trans-unit resname="form.appventus_victoirecmsbundle_widgetrendertype.children.mode.label">
+        <source>form.appventus_victoirecmsbundle_widgetrendertype.children.mode.label</source>
+        <target>Mode</target>
+      </trans-unit>
+      <trans-unit resname="form.appventus_victoirecmsbundle_widgetrendertype.children.route.label">
+        <source>form.appventus_victoirecmsbundle_widgetrendertype.children.route.label</source>
+        <target>Nom de la route</target>
+      </trans-unit>
+      <trans-unit resname="form.appventus_victoirecmsbundle_widgetrendertype.children.params.label">
+        <source>form.appventus_victoirecmsbundle_widgetrendertype.children.params.label</source>
+        <target>Paramètres de la route</target>
+      </trans-unit>
+      <trans-unit resname="form.appventus_victoirecmsbundle_widgetrendertype.children.params.help_block">
+        <source>form.appventus_victoirecmsbundle_widgetrendertype.children.params.help_block</source>
+        <target>Copiez ici un tableau de paramètres au format json. Par ex. {"id": 1}</target>
       </trans-unit>
       <trans-unit resname="form.render.mode.choice.route">
         <source>form.render.mode.choice.route</source>
-        <target state="new">Route</target>
+        <target>Route</target>
       </trans-unit>
       <trans-unit resname="form.render.mode.choice.widget_reference">
         <source>form.render.mode.choice.widget_reference</source>
-        <target state="new">Référence à un widget</target>
+        <target>Référence à un widget</target>
       </trans-unit>
     </body>
   </file>

@@ -6,7 +6,7 @@
 {% block content %}
 
 {% if widget.mode == 'route' %}
-    {% render(path(widget.route, widget.params)) %}
+    {% render(path(widget.route, widget.params|merge(app.request.query.all))) %}
 {% else %}
     <div class="vic-render-widget-container">
         {{ cms_widget(widget.widget) }}

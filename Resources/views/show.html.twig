@@ -1,0 +1,18 @@
+{% block body %}
+
+<div class="vic-widget" id="widget-{{widget.id}}">
+{% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
+
+{% block content %}
+
+{% if widget.mode == 'route' %}
+    {% render(path(widget.route, widget.params|merge(app.request.query.all))) %}
+{% else %}
+    <div class="vic-render-widget-container">
+        {{ cms_widget(widget.widget) }}
+    </div>
+{% endif %}
+{% endblock content %}
+</div>
+
+{% endblock body %}

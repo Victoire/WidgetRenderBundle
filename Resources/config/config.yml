@@ -1,4 +1,4 @@
-victoire_cms:
+victoire_core:
     widgets:
         render:
             class: "Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender"

@@ -5,8 +5,8 @@ namespace Victoire\Widget\RenderBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Victoire\CmsBundle\Form\EntityProxyFormType;
-use Victoire\CmsBundle\Form\WidgetType;
+use Victoire\Bundle\CoreBundle\Form\EntityProxyFormType;
+use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
 
@@ -36,7 +36,7 @@ class WidgetRenderType extends WidgetType
                 ))
                 ->add('route')
                 ->add($builder->create('params', 'text', array(
-                    'help_block' => 'form.appventus_victoirecmsbundle_widgetrendertype.children.params.help_block'
+                    'help_block' => 'form.appventus_victoireCoreBundle_widgetrendertype.children.params.help_block'
                     )
                 )->addModelTransformer($transformer))
                 ->add('widget');
@@ -69,6 +69,6 @@ class WidgetRenderType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoirecmsbundle_widgetrendertype';
+        return 'appventus_victoireCoreBundle_widgetrendertype';
     }
 }

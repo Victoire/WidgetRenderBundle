@@ -2,7 +2,7 @@
 namespace Victoire\Widget\RenderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\CmsBundle\Entity\Widget;
+use Victoire\Bundle\CoreBundle\Entity\Widget;
 
 /**
  * WidgetRender
@@ -12,7 +12,7 @@ use Victoire\CmsBundle\Entity\Widget;
  */
 class WidgetRender extends Widget
 {
-    use \Victoire\CmsBundle\Entity\Traits\WidgetTrait;
+    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
 
     /**
      * @var string
@@ -38,7 +38,7 @@ class WidgetRender extends Widget
     /**
      * @var array
      *
-     * @ORM\ManyToOne(targetEntity="\Victoire\CmsBundle\Entity\Widget")
+     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\CoreBundle\Entity\Widget")
      * @ORM\JoinColumn(name="widget_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
     protected $widget;

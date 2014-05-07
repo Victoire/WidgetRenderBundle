@@ -1,7 +1,7 @@
 services:
-    victoire_cms.twig.widget_render_manager:
+    victoire_core.twig.widget_render_manager:
         class: Victoire\Widget\RenderBundle\Widget\Manager\WidgetRenderManager
         arguments: [@service_container]
 
     widget_render_manager:
-        alias: victoire_cms.twig.widget_render_manager
+        alias: victoire_core.twig.widget_render_manager

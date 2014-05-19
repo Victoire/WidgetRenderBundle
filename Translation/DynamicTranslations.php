@@ -16,7 +16,7 @@ class DynamicTranslations implements TranslationContainerInterface
     public static function getTranslationMessages()
     {
         return array(
-            new Message('form.appventus_victoireCoreBundle_widgetrendertype.children.params.help_block'),
+            new Message('form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block'),
         );
     }
 }

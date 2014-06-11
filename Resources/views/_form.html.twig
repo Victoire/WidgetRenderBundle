@@ -1,22 +1,25 @@
 {% form_theme form 'VictoireFormBundle:Form:fields.html.twig' %}
 
-{{ form_row(form.mode) }}
 
+{% block form %}
+{{ form_row(form.mode) }}
+<div id="mode-widget_reference" class="render-mode" {% if form.vars.value.mode == "route" %}style="display:none"{% endif %}>
+    {{ form_row(form.widget) }}
+</div>
 <div id="mode-route" class="render-mode" {% if form.vars.value.mode != "route" %}style="display:none"{% endif %}>
    {{ form_row(form.route) }}
    {{ form_row(form.params) }}
 </div>
-
-<div id="mode-widget_reference" class="render-mode" {% if form.vars.value.mode == "route" %}style="display:none"{% endif %}>
-   {{ form_row(form.widget) }}
-</div>
-
-{{ form_rest(form) }}
-
+{{form_rest(form)}}
 
 <script type="text/javascript">
-$vic('#appventus_victoirecorebundle_widgetrendertype_mode').change(function() {
+$vic('#victoire_widget_form_render_mode').change(function() {
     $vic('.render-mode').hide();
     $vic('#mode-'+$vic(this).val()).show();
 });
 </script>
+{% endblock form %}
+
+
+
+

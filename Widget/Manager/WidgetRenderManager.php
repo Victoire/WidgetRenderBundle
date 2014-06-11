@@ -2,113 +2,71 @@
 
 namespace Victoire\Widget\RenderBundle\Widget\Manager;
 
+use Victoire\Bundle\CoreBundle\Widget\Managers\BaseWidgetManager;
+use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
 
-use Victoire\Widget\RenderBundle\Form\WidgetRenderType;
 use Victoire\Widget\RenderBundle\Entity\WidgetRender;
 
-class WidgetRenderManager
+/**
+ * CRUD operations on WidgetRedactor Widget
+ *
+ * The widget view has two parameters: widget and content
+ *
+ * widget: The widget to display, use the widget as you wish to render the view
+ * content: This variable is computed in this WidgetManager, you can set whatever you want in it and display it in the show view
+ *
+ * The content variable depends of the mode: static/businessEntity/entity/query
+ *
+ * The content is given depending of the mode by the methods:
+ *  getWidgetStaticContent
+ *  getWidgetBusinessEntityContent
+ *  getWidgetEntityContent
+ *  getWidgetQueryContent
+ *
+ * So, you can use the widget or the content in the show.html.twig view.
+ * If you want to do some computation, use the content and do it the 4 previous methods.
+ *
+ * If you just want to use the widget and not the content, remove the method that throws the exceptions.
+ *
+ * By default, the methods throws Exception to notice the developer that he should implements it owns logic for the widget
+ *
+ */
+class WidgetRenderManager extends BaseWidgetManager implements WidgetManagerInterface
 {
-protected $container;
-
     /**
-     * constructor
+     * The name of the widget
      *
-     * @param ServiceContainer $container
+     * @return string
      */
-    public function __construct($container)
+    public function getWidgetName()
     {
-        $this->container = $container;
+        return 'render';
     }
 
     /**
-     * create a new WidgetRender
-     * @param Page   $page
-     * @param string $slot
+     * Get content for the widget
      *
-     * @return $widget
-     */
-    public function newWidget($page, $slot)
-    {
-        $widget = new WidgetRender();
-        $widget->setPage($page);
-        $widget->setslot($slot);
-
-        return $widget;
-    }
-    /**
-     * render the WidgetRender
      * @param Widget $widget
-     *
-     * @return widget show
+     * @throws \Exception
+     * @return Ambigous <string, unknown, \Victoire\Bundle\CoreBundle\Widget\Managers\mixed, mixed>
      */
-    public function render($widget)
+    protected function getWidgetContent(Widget $widget)
     {
-        return $this->container->get('victoire_templating')->render(
-            "VictoireWidgetRenderBundle::show.html.twig",
-            array(
-                "widget" => $widget
-            )
-        );
-    }
+        //the mode of display of the widget
+        $mode = $widget->getMode();
 
-    /**
-     * render WidgetRender form
-     * @param Form           $form
-     * @param WidgetRender $widget
-     * @param BusinessEntity $entity
-     * @return form
-     */
-    public function renderForm($form, $widget, $entity = null)
-    {
+        //the widget must have a mode
+        if ($mode === null) {
+            throw new \Exception('The widget ['.$widget->getId().'] has no mode.');
+        }
 
-        return $this->container->get('victoire_templating')->render(
-            "VictoireWidgetRenderBundle::edit.html.twig",
-            array(
-                "widget" => $widget,
-                'form'   => $form->createView(),
-                'id'     => $widget->getId(),
-                'entity' => $entity
-            )
-        );
-    }
+        //if ($mode === WidgetRender::MODE_ROUTE) {
+            $content = '';
+//         } else {
+//             $content = parent::getWidgetContent($widget);
+//         }
 
-    /**
-     * create a form with given widget
-     * @param WidgetRender $widget
-     * @param string         $entityName
-     * @param string         $namespace
-     * @return $form
-     */
-    public function buildForm($widget, $entityName = null, $namespace = null)
-    {
-        $form = $this->container->get('form.factory')->create(new WidgetRenderType($entityName, $namespace), $widget);
-
-        return $form;
-    }
-
-    /**
-     * create form new for WidgetRender
-     * @param Form           $form
-     * @param WidgetRender $widget
-     * @param string         $slot
-     * @param Page           $page
-     * @param string         $entity
-     *
-     * @return new form
-     */
-    public function renderNewForm($form, $widget, $slot, $page, $entity = null)
-    {
-
-        return $this->container->get('victoire_templating')->render(
-            "VictoireWidgetRenderBundle::new.html.twig",
-            array(
-                "widget"          => $widget,
-                'form'            => $form->createView(),
-                "slot"            => $slot,
-                "entity"          => $entity,
-                "renderContainer" => true,
-                "page"            => $page
-            )
-        );
+        return $content;
     }
 }

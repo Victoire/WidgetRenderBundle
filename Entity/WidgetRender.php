@@ -12,6 +12,9 @@ use Victoire\Bundle\CoreBundle\Entity\Widget;
  */
 class WidgetRender extends Widget
 {
+    const MODE_ROUTE = 'route';
+    const MODE_WIDGET_REFERENCE = 'widget_reference';
+
     /**
      * @var string
      *
@@ -31,7 +34,7 @@ class WidgetRender extends Widget
      *
      * @ORM\Column(name="mode", type="string", nullable=true)
      */
-    protected $mode = "route";
+    protected $mode = self::MODE_ROUTE;
 
     /**
      * @var array
@@ -44,7 +47,8 @@ class WidgetRender extends Widget
     /**
      * initialize params
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->params = array();
     }
 

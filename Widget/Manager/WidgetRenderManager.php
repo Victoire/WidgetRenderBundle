@@ -41,7 +41,7 @@ class WidgetRenderManager extends BaseWidgetManager implements WidgetManagerInte
      */
     public function getWidgetName()
     {
-        return 'render';
+        return 'Render';
     }
 
     /**

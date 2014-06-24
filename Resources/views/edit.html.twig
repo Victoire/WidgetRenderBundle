@@ -1,7 +1,5 @@
 {% extends 'VictoireCoreBundle:Widget:edit.html.twig' %}
 
-{% block form %}
-
-{% include 'VictoireWidgetRenderBundle::_form.html.twig' %}
-
-{% endblock form %}
+{% block form_static %}
+    {% include 'VictoireWidgetRenderBundle::form.html.twig' %}
+{% endblock form_static %}

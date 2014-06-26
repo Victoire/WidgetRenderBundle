@@ -9,6 +9,7 @@ use Victoire\Bundle\CoreBundle\Form\EntityProxyFormType;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
+use Victoire\Widget\RenderBundle\Entity\WidgetRender;
 
 /**
  * WidgetRender form type
@@ -23,15 +24,27 @@ class WidgetRenderType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        //
+        parent::buildForm($builder, $options);
+
+        $namespace = $options['namespace'];
+        $entityName = $options['entityName'];
+
+        if ($entityName !== null) {
+            if ($namespace === null) {
+                throw new \Exception('The namespace is mandatory if the entity_name is given.');
+            }
+        }
+
         //choose form mode
-        if ($this->entity_name === null) {
+        if ($entityName === null) {
             //if no entity is given, we generate the static form
             $transformer = new JsonToArrayTransformer();
             $builder
                 ->add('mode', 'choice', array(
                     'choices'  => array(
-                        'route'            => 'form.render.mode.choice.route',
-                        'widget_reference' => 'form.render.mode.choice.widget_reference'
+                        WidgetRender::MODE_ROUTE            => 'form.render.mode.choice.route',
+                        WidgetRender::MODE_WIDGET_REFERENCE => 'form.render.mode.choice.widget_reference'
                     ),
                 ))
                 ->add('route')
@@ -40,22 +53,19 @@ class WidgetRenderType extends WidgetType
                     )
                 )->addModelTransformer($transformer))
                 ->add('widget');
-
-        } else {
-            //else, WidgetType class will embed a EntityProxyType for given entity
-            parent::buildForm($builder, $options);
         }
-
-
     }
 
 
     /**
-     * bind form to WidgetRender entity
+     * Bind form to WidgetRender entity
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+        parent::setDefaultOptions($resolver);
+
         $resolver->setDefaults(array(
             'data_class'         => 'Victoire\Widget\RenderBundle\Entity\WidgetRender',
             'widget'             => 'render',
@@ -63,12 +73,13 @@ class WidgetRenderType extends WidgetType
         ));
     }
 
-
     /**
      * get form name
+     *
+     * @return string
      */
     public function getName()
     {
-        return 'appventus_victoirecorebundle_widgetrendertype';
+        return 'victoire_widget_form_render';
     }
 }

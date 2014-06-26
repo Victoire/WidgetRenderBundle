@@ -1,7 +1,4 @@
-{% block body %}
-
-<div class="vic-widget" id="widget-{{widget.id}}">
-{% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 
 {% block content %}
 
@@ -12,7 +9,5 @@
         {{ cms_widget(widget.widget) }}
     </div>
 {% endif %}
-{% endblock content %}
-</div>
 
-{% endblock body %}
+{% endblock content %}

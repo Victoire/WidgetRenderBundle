@@ -3,6 +3,7 @@ services:
         class: Victoire\Widget\RenderBundle\Widget\Manager\WidgetRenderManager
         arguments: 
             - "@service_container"
+            - "Render"
 
     widget_render_manager:
         alias: victoire_core.twig.widget_render_manager

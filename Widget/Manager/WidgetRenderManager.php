@@ -35,16 +35,6 @@ use Victoire\Widget\RenderBundle\Entity\WidgetRender;
 class WidgetRenderManager extends BaseWidgetManager implements WidgetManagerInterface
 {
     /**
-     * The name of the widget
-     *
-     * @return string
-     */
-    public function getWidgetName()
-    {
-        return 'Render';
-    }
-
-    /**
      * Get content for the widget
      *
      * @param Widget $widget

@@ -7,7 +7,7 @@ use Victoire\Bundle\CoreBundle\Entity\Widget;
 /**
  * WidgetRender
  *
- * @ORM\Table("cms_widget_render")
+ * @ORM\Table("vic_widget_render")
  * @ORM\Entity
  */
 class WidgetRender extends Widget
@@ -85,7 +85,6 @@ class WidgetRender extends Widget
         return $this->params;
     }
 
-
     /**
      * params settter
      *
@@ -143,4 +142,3 @@ class WidgetRender extends Widget
         return $this;
     }
 }
-

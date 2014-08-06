@@ -1,13 +1,8 @@
 services:
-    victoire_core.twig.widget_render_manager:
-        class: Victoire\Widget\RenderBundle\Widget\Manager\WidgetRenderManager
-        arguments: 
-            - "@service_container"
-            - "Render"
-
-    widget_render_manager:
-        alias: victoire_core.twig.widget_render_manager
-        
+    victoire_core.widget_render_content_resolver:
+        class: Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: Render }
     #alias to the entity
     victoire.widget.render:
         class: Victoire\Widget\RenderBundle\Entity\WidgetRender
@@ -16,4 +11,4 @@ services:
         class: Victoire\Widget\RenderBundle\Form\WidgetRenderType
         tags:
             - { name: form.type , alias: victoire_widget_form_render}
-        
+

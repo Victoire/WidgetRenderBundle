@@ -2,7 +2,7 @@
 namespace Victoire\Widget\RenderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
  * WidgetRender
@@ -12,8 +12,8 @@ use Victoire\Bundle\CoreBundle\Entity\Widget;
  */
 class WidgetRender extends Widget
 {
-    const MODE_ROUTE = 'route';
-    const MODE_WIDGET_REFERENCE = 'widget_reference';
+    const KIND_ROUTE = 'route';
+    const KIND_WIDGET_REFERENCE = 'relatedWidget_reference';
 
     /**
      * @var string
@@ -32,29 +32,21 @@ class WidgetRender extends Widget
     /**
      * @var array
      *
-     * @ORM\Column(name="mode", type="string", nullable=true)
+     * @ORM\Column(name="kind", type="string", nullable=true)
      */
-    protected $mode = self::MODE_ROUTE;
+    protected $kind = self::KIND_ROUTE;
 
     /**
      * @var array
      *
-     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\CoreBundle\Entity\Widget")
-     * @ORM\JoinColumn(name="widget_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
+     * @ORM\ManyToOne(targetEntity="\Victoire\Bundle\WidgetBundle\Entity\Widget")
+     * @ORM\JoinColumn(name="related_widget_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
-    protected $widget;
+    protected $relatedWidget;
 
     /**
-     * initialize params
-     */
-    public function __construct()
-    {
-        $this->params = array();
-    }
-
-    /**
-     * route gettter
-     * @return string route name
+     * route getter
+     * @return string
      */
     public function getRoute()
     {
@@ -64,7 +56,8 @@ class WidgetRender extends Widget
     /**
      * route settter
      *
-     * @param string route name
+     * @param string $route
+     *
      * @return WidgetRender
      */
     public function setRoute($route)
@@ -77,7 +70,6 @@ class WidgetRender extends Widget
     /**
      * params settter
      *
-     * @param array params name
      * @return WidgetRender
      */
     public function getParams()
@@ -85,11 +77,11 @@ class WidgetRender extends Widget
         return $this->params;
     }
 
-
     /**
      * params settter
      *
-     * @param array params name
+     * @param array $params
+     *
      * @return WidgetRender
      */
     public function setParams($params)
@@ -100,47 +92,48 @@ class WidgetRender extends Widget
     }
 
     /**
-     * mode gettter
-     * @return string mode name
+     * kind gettter
+     * @return string kind name
      */
-    public function getMode()
+    public function getKind()
     {
-        return $this->mode;
+        return $this->kind;
     }
 
     /**
-     * mode settter
+     * kind settter
      *
-     * @param string mode name
+     * @param string $kind
+     *
      * @return WidgetRender
      */
-    public function setMode($mode)
+    public function setKind($kind)
     {
-        $this->mode = $mode;
+        $this->kind = $kind;
 
         return $this;
     }
 
     /**
-     * widget gettter
-     * @return Widget widget
+     * relatedWidget gettter
+     * @return Widget relatedWidget
      */
-    public function getWidget()
+    public function getRelatedWidget()
     {
-        return $this->widget;
+        return $this->relatedWidget;
     }
 
     /**
-     * widget settter
+     * relatedWidget settter
      *
-     * @param Widget widget name
+     * @param Widget $relatedWidget
+     *
      * @return WidgetRender
      */
-    public function setWidget($widget)
+    public function setRelatedWidget($relatedWidget)
     {
-        $this->widget = $widget;
+        $this->relatedWidget = $relatedWidget;
 
         return $this;
     }
 }
-

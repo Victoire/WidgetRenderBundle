@@ -30,12 +30,12 @@
         <source>form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block</source>
         <target>Copiez ici un tableau de paramètres au format json. Par ex. {"id": 1}</target>
       </trans-unit>
-      <trans-unit resname="form.render.mode.choice.route">
-        <source>form.render.mode.choice.route</source>
+      <trans-unit resname="form.render.kind.choice.route">
+        <source>form.render.kind.choice.route</source>
         <target>Route</target>
       </trans-unit>
-      <trans-unit resname="form.render.mode.choice.widget_reference">
-        <source>form.render.mode.choice.widget_reference</source>
+      <trans-unit resname="form.render.kind.choice.widget_reference">
+        <source>form.render.kind.choice.widget_reference</source>
         <target>Référence à un widget</target>
       </trans-unit>
     </body>

@@ -2,10 +2,8 @@
 
 namespace Victoire\Widget\RenderBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Victoire\Bundle\CoreBundle\Form\EntityProxyFormType;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
@@ -41,10 +39,10 @@ class WidgetRenderType extends WidgetType
             //if no entity is given, we generate the static form
             $transformer = new JsonToArrayTransformer();
             $builder
-                ->add('mode', 'choice', array(
+                ->add('kind', 'choice', array(
                     'choices'  => array(
-                        WidgetRender::MODE_ROUTE            => 'form.render.mode.choice.route',
-                        WidgetRender::MODE_WIDGET_REFERENCE => 'form.render.mode.choice.widget_reference'
+                        WidgetRender::KIND_ROUTE            => 'form.render.kind.choice.route',
+                        WidgetRender::KIND_WIDGET_REFERENCE => 'form.render.kind.choice.widget_reference'
                     ),
                 ))
                 ->add('route')
@@ -52,10 +50,9 @@ class WidgetRenderType extends WidgetType
                     'help_block' => 'form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block'
                     )
                 )->addModelTransformer($transformer))
-                ->add('widget');
+                ->add('relatedWidget');
         }
     }
-
 
     /**
      * Bind form to WidgetRender entity

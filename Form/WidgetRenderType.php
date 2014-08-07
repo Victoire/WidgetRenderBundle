@@ -40,17 +40,19 @@ class WidgetRenderType extends WidgetType
             $transformer = new JsonToArrayTransformer();
             $builder
                 ->add('kind', 'choice', array(
+                    'label' => 'form.render.kind.label',
                     'choices'  => array(
                         WidgetRender::KIND_ROUTE            => 'form.render.kind.choice.route',
                         WidgetRender::KIND_WIDGET_REFERENCE => 'form.render.kind.choice.widget_reference'
                     ),
                 ))
-                ->add('route')
+                ->add('route', null, array('label' => 'form.render.route.label'))
                 ->add($builder->create('params', 'text', array(
+                    'label'      => 'form.render.route.params.label',
                     'help_block' => 'form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block'
                     )
                 )->addModelTransformer($transformer))
-                ->add('relatedWidget');
+                ->add('relatedWidget', null, array('label' => 'form.render.widget_reference.label'));
         }
     }
 

@@ -38,6 +38,22 @@
         <source>form.render.kind.choice.widget_reference</source>
         <target>Référence à un widget</target>
       </trans-unit>
+      <trans-unit resname="form.render.widget_reference.label">
+        <source>form.render.widget_reference.label</source>
+        <target>Widget</target>
+      </trans-unit>
+      <trans-unit resname="form.render.kind.label">
+        <source>form.render.kind.label</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit resname="form.render.route.label">
+        <source>form.render.route.label</source>
+        <target>Route</target>
+      </trans-unit>
+      <trans-unit resname="form.render.route.params.label">
+        <source>form.render.route.params.label</source>
+        <target>Paramètres de la route</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -19,9 +19,9 @@ class VicRoutingExtension extends RoutingExtension
 
     public function getPath($name, $parameters = array(), $relative = false)
     {
-        foreach($parameters as $_key => $_value) {
+        foreach ($parameters as $_key => $_value) {
             //if the value contains a curly bracket, it means that there is no entity to render with
-            if(strstr($_value, '{') != null) {
+            if (strstr($_value, '{') != null) {
                 return $this->myGenerator->generate('vic_widget_render_getStaticContent', array('path' => $name), $relative ? UrlGeneratorInterface::RELATIVE_PATH : UrlGeneratorInterface::ABSOLUTE_PATH);
             }
         }

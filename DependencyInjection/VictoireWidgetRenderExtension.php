@@ -25,10 +25,5 @@ class VictoireWidgetRenderExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        //  Given I am in a BEPP
-        //   When I use a render widget with a route containing parameters such as the id of the entity
-        //   Then I should see a static content (the path without the parameter) instead of the error "invalid route parameter '' given"
-        //     So I override the "path" twig function
-        $container->setParameter('twig.extension.routing.class', 'Victoire\Widget\RenderBundle\Twig\VicRoutingExtension');
     }
 }

@@ -3,9 +3,7 @@
 namespace Victoire\Widget\RenderBundle\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
-use Symfony\Component\Form\Exception\TransformationFailedException;
 use Doctrine\Common\Persistence\ObjectManager;
-use Acme\TaskBundle\Entity\Issue;
 
 class JsonToArrayTransformer implements DataTransformerInterface
 {
@@ -25,7 +23,7 @@ class JsonToArrayTransformer implements DataTransformerInterface
      * Transforms a php array into json array
      *
      * @param  array $array
-     * @return json array
+     * @return json  array
      */
     public function transform($array = array())
     {
@@ -40,6 +38,6 @@ class JsonToArrayTransformer implements DataTransformerInterface
      */
     public function reverseTransform($json)
     {
-        return $json === '' ? null : json_decode($json, true);
+        return $json === '' ? array() : json_decode($json, true);
     }
 }

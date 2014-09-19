@@ -47,7 +47,7 @@ class WidgetRenderType extends WidgetType
             ->add('route', null, array('label' => 'form.render.route.label'))
             ->add($builder->create('params', 'text', array(
                 'label'      => 'form.render.route.params.label',
-                'help_block' => 'form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block'
+                'vic_help_block' => 'form.appventus_victoirecorebundle_widgetrendertype.children.params.vic_help_block'
                 )
             )->addModelTransformer($transformer))
             ->add('relatedWidget', null, array('label' => 'form.render.widget_reference.label'));

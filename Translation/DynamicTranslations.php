@@ -4,7 +4,6 @@ namespace Victoire\Widget\RenderBundle\Translation;
 
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Translation\TranslationContainerInterface;
-use JMS\TranslationBundle\Model\FileSource;
 
 class DynamicTranslations implements TranslationContainerInterface
 {
@@ -16,7 +15,7 @@ class DynamicTranslations implements TranslationContainerInterface
     public static function getTranslationMessages()
     {
         return array(
-            new Message('form.appventus_victoirecorebundle_widgetrendertype.children.params.help_block'),
+            new Message('form.appventus_victoirecorebundle_widgetrendertype.children.params.vic_help_block'),
         );
     }
 }

@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Victoire\Bundle\QueryBundle\Helper\QueryHelper;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
-use Victoire\Widget\FilterBundle\Filter\Chain\FilterChain;
+use Victoire\Bundle\FilterBundle\Filter\Chain\FilterChain;
 use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
 use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
@@ -59,7 +59,7 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
         //Creates a new twig environment
         $twig = new \Twig_Environment(new \Twig_Loader_String());
 
-        //add global values for `entity` and `businessEntityName` 
+        //add global values for `entity` and `businessEntityName`
         $twig->addGlobal('entity', $entity);
         $twig->addGlobal($widget->getBusinessEntityName(), $entity);
 

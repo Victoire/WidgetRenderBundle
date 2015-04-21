@@ -7,7 +7,7 @@ Get this render bundle and so on
 First you need to have a valid Symfony2 Victoire edition.
 Then you just have to run the following composer command :
 
-    php composer.phar require appventus/render-widget
+    php composer.phar require friendsofvictoire/render-widget
 
 The render bundle handles Bootstrap and Foundation view.
 

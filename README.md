@@ -1,7 +1,7 @@
-Victoire CMS Render Bundle
+Victoire Render Bundle
 ============
 
-Need to add a render in a victoire cms website ?
+Need to add a render in a victoire website ?
 Get this render bundle and so on
 
 First you need to have a valid Symfony2 Victoire edition.

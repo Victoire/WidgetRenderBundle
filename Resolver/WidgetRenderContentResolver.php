@@ -64,6 +64,7 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
         $twig->addGlobal($widget->getBusinessEntityName(), $entity);
 
         //Get widget route parameters
+        $params = array();
         foreach ($widget->getParams() as $key => $_routeParameter) {
             $params[$key] = $twig->render($_routeParameter);
         }

@@ -26,11 +26,11 @@ class WidgetRenderType extends WidgetType
         parent::buildForm($builder, $options);
 
         $namespace = $options['namespace'];
-        $entityName = $options['entityName'];
+        $businessEntityId = $options['businessEntityId'];
 
-        if ($entityName !== null) {
+        if ($businessEntityId !== null) {
             if ($namespace === null) {
-                throw new \Exception('The namespace is mandatory if the entity_name is given.');
+                throw new \Exception('The namespace is mandatory if the business_entity_id is given.');
             }
         }
 

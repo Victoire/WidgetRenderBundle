@@ -59,9 +59,9 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
         //Creates a new twig environment
         $twig = new \Twig_Environment(new \Twig_Loader_String());
 
-        //add global values for `entity` and `businessEntityName`
+        //add global values for `entity` and `businessEntityId`
         $twig->addGlobal('entity', $entity);
-        $twig->addGlobal($widget->getBusinessEntityName(), $entity);
+        $twig->addGlobal($widget->getBusinessEntityId(), $entity);
 
         //Get widget route parameters
         $params = array();

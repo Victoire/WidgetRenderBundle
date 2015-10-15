@@ -1,4 +1,5 @@
 <?php
+
 namespace Victoire\Widget\RenderBundle\Controller;
 
 use AppVentus\Awesome\ShortcutsBundle\Controller\AwesomeController;
@@ -13,14 +14,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class WidgetRenderController extends AwesomeController
 {
     /**
-     * Render static content
+     * Render static content.
      *
      * @Route("/{path}", name="vic_widget_render_getStaticContent")
      * @Template("VictoireWidgetRenderBundle::_staticContent.html.twig")
+     *
      * @return array|Response the response
      */
     public function getStaticContentAction($path)
     {
-        return array("path" => $path);
+        return ['path' => $path];
     }
 }

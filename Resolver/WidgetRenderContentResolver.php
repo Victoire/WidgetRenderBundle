@@ -2,25 +2,21 @@
 
 namespace Victoire\Widget\RenderBundle\Resolver;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\PropertyAccess\PropertyAccess;
-use Victoire\Bundle\QueryBundle\Helper\QueryHelper;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
-use Victoire\Bundle\FilterBundle\Filter\Chain\FilterChain;
 use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
-use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 
 class WidgetRenderContentResolver extends BaseWidgetContentResolver
 {
     /**
-     * Get the business entity content
+     * Get the business entity content.
+     *
      * @param Widget $widget
      *
      * @return string
      */
     public function getWidgetBusinessEntityContent(Widget $widget)
     {
-        if($entity = $widget->getEntity()) {
+        if ($entity = $widget->getEntity()) {
             //Read into route parameters with twig
             $this->readIntoWidgetRouteParameters($widget);
         }
@@ -32,16 +28,15 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
     }
 
     /**
-     * Get the content of the widget by the entity linked to it
+     * Get the content of the widget by the entity linked to it.
      *
      * @param Widget $widget
      *
      * @return string
-     *
      */
     public function getWidgetEntityContent(Widget $widget)
     {
-        if($entity = $widget->getEntity()) {
+        if ($entity = $widget->getEntity()) {
             //Read into route parameters with twig
             $this->readIntoWidgetRouteParameters($widget);
         }
@@ -64,7 +59,7 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
         $twig->addGlobal($widget->getBusinessEntityId(), $entity);
 
         //Get widget route parameters
-        $params = array();
+        $params = [];
         foreach ($widget->getParams() as $key => $_routeParameter) {
             $params[$key] = $twig->render($_routeParameter);
         }

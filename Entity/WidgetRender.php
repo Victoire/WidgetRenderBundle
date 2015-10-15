@@ -1,11 +1,12 @@
 <?php
+
 namespace Victoire\Widget\RenderBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
- * WidgetRender
+ * WidgetRender.
  *
  * @ORM\Table("vic_widget_render")
  * @ORM\Entity
@@ -45,7 +46,8 @@ class WidgetRender extends Widget
     protected $relatedWidget;
 
     /**
-     * route getter
+     * route getter.
+     *
      * @return string
      */
     public function getRoute()
@@ -54,7 +56,7 @@ class WidgetRender extends Widget
     }
 
     /**
-     * route settter
+     * route settter.
      *
      * @param string $route
      *
@@ -68,7 +70,7 @@ class WidgetRender extends Widget
     }
 
     /**
-     * params settter
+     * params settter.
      *
      * @return WidgetRender
      */
@@ -78,7 +80,7 @@ class WidgetRender extends Widget
     }
 
     /**
-     * params settter
+     * params settter.
      *
      * @param array $params
      *
@@ -92,7 +94,8 @@ class WidgetRender extends Widget
     }
 
     /**
-     * kind gettter
+     * kind gettter.
+     *
      * @return string kind name
      */
     public function getKind()
@@ -101,7 +104,7 @@ class WidgetRender extends Widget
     }
 
     /**
-     * kind settter
+     * kind settter.
      *
      * @param string $kind
      *
@@ -115,7 +118,8 @@ class WidgetRender extends Widget
     }
 
     /**
-     * relatedWidget gettter
+     * relatedWidget gettter.
+     *
      * @return Widget relatedWidget
      */
     public function getRelatedWidget()
@@ -124,7 +128,7 @@ class WidgetRender extends Widget
     }
 
     /**
-     * relatedWidget settter
+     * relatedWidget settter.
      *
      * @param Widget $relatedWidget
      *

@@ -1,20 +1,20 @@
 {
     "name": "friendsofvictoire/render-widget",
     "type": "symfony-bundle",
-    "description": "Victoire Cms Render component",
-    "keywords": ["cms", "victoire", "render"],
-    "homepage": "http://appventus.com",
+    "description": "Victoire DCMS Render widget",
+    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS", "Render"],
+    "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
         {
             "name": "Paul Andrieux",
-            "email": "paul@appventus.com"
+            "email": "paul@victoire.io"
         }
     ],
     "require": {
         "php"                                 : ">=5.3.3",
         "symfony/framework-bundle"            : "~2.3",
-        "victoire/victoire"                   : "dev-master"
+        "victoire/victoire"                   : "~1.3.0"
     },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\RenderBundle": "" }

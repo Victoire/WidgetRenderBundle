@@ -1,24 +1,40 @@
 {
-    "name": "friendsofvictoire/render-widget",
-    "type": "symfony-bundle",
-    "description": "Victoire DCMS Render widget",
-    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS", "Render"],
-    "homepage": "http://victoire.io",
-    "license": "MIT",
-    "authors": [
+    "name"             : "friendsofvictoire/render-widget",
+    "type"             : "symfony-bundle",
+    "description"      : "Victoire DCMS Render widget",
+    "keywords"         : [
+        "DCMS",
+        "Victoire",
+        "widget",
+        "FriendsofVictoire",
+        "FoV",
+        "Dynamic",
+        "CMS",
+        "Render"
+    ],
+    "homepage"         : "http://victoire.io",
+    "license"          : "MIT",
+    "authors"          : [
         {
-            "name": "Paul Andrieux",
+            "name" : "Paul Andrieux",
             "email": "paul@victoire.io"
         }
     ],
-    "require": {
-        "php"                                 : ">=5.3.3",
-        "symfony/framework-bundle"            : "~2.3",
-        "victoire/victoire"                   : "~1.3.0"
+    "require"          : {
+        "php"                     : ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+        "victoire/victoire"       : "~1.3.0"
     },
-    "autoload": {
-        "psr-0": { "Victoire\\Widget\\RenderBundle": "" }
+    "autoload"         : {
+        "psr-0": {
+            "Victoire\\Widget\\RenderBundle": ""
+        }
     },
     "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/RenderBundle"
+    "target-dir"       : "Victoire/Widget/RenderBundle",
+    "extra"            : {
+        "branch-alias": {
+            "dev-master": "1.3.x-dev"
+        }
+    }
 }

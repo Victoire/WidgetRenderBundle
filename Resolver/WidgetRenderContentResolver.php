@@ -57,7 +57,7 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
         //add global values for `entity` and `businessEntityId`
         $vars = [
             'entity'                       => $entity,
-            $widget->getBusinessEntityId() => $entity
+            $widget->getBusinessEntityId() => $entity,
         ];
 
         //Get widget route parameters

@@ -2,8 +2,9 @@
 
 namespace Victoire\Widget\RenderBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Widget\RenderBundle\DataTransformer\JsonToArrayTransformer;
 use Victoire\Widget\RenderBundle\Entity\WidgetRender;
@@ -36,11 +37,11 @@ class WidgetRenderType extends WidgetType
         //if no entity is given, we generate the static form
         $transformer = new JsonToArrayTransformer();
         $builder
-            ->add('kind', 'choice', [
+            ->add('kind', ChoiceType::class, [
                 'label'    => 'form.render.kind.label',
                 'choices'  => [
-                    WidgetRender::KIND_ROUTE            => 'form.render.kind.choice.route',
-                    WidgetRender::KIND_WIDGET_REFERENCE => 'form.render.kind.choice.widget_reference',
+                    'form.render.kind.choice.route'            => WidgetRender::KIND_ROUTE,
+                    'form.render.kind.choice.widget_reference' => WidgetRender::KIND_WIDGET_REFERENCE ,
                 ],
             ])
             ->add('route', null, ['label' => 'form.render.route.label'])
@@ -53,28 +54,16 @@ class WidgetRenderType extends WidgetType
     }
 
     /**
-     * Bind form to WidgetRender entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\RenderBundle\Entity\WidgetRender',
             'widget'             => 'render',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_render';
     }
 }

@@ -3,3 +3,4 @@ victoire_core:
         Render:
             class: "Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender"
             name: Render
+            cache: false

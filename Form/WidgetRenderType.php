@@ -43,6 +43,7 @@ class WidgetRenderType extends WidgetType
                     'form.render.kind.choice.route'            => WidgetRender::KIND_ROUTE,
                     'form.render.kind.choice.widget_reference' => WidgetRender::KIND_WIDGET_REFERENCE ,
                 ],
+                'choices_as_values' => true
             ])
             ->add('route', null, ['label' => 'form.render.route.label'])
             ->add($builder->create('params', 'text', [

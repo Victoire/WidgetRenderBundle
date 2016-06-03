@@ -2,16 +2,16 @@
 
 namespace Victoire\Widget\RenderBundle\Controller;
 
-use AppVentus\Awesome\ShortcutsBundle\Controller\AwesomeController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * WidgetRender controller.
  *
  * @Route("/vic/widget/render")
  */
-class WidgetRenderController extends AwesomeController
+class WidgetRenderController extends Controller
 {
     /**
      * Render static content.

@@ -1,6 +1,7 @@
 services:
     victoire_core.widget_render_content_resolver:
         class: Victoire\Widget\RenderBundle\Resolver\WidgetRenderContentResolver
+        parent: victoire_widget.base_widget_content_resolver
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: Render }
     #alias to the entity

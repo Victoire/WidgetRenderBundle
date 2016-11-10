@@ -8,51 +8,11 @@
     <body>
       <trans-unit resname="widget.render.new.action.label">
         <source>widget.render.new.action.label</source>
-        <target>Render</target>
+        <target>Render (utilisation avancée)</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.render.label">
         <source>modal.form.widget.type.render.label</source>
-        <target>Render</target>
-      </trans-unit>
-      <trans-unit resname="form.appventus_victoirecorebundle_widgetrendertype.children.mode.label">
-        <source>form.appventus_victoirecorebundle_widgetrendertype.children.mode.label</source>
-        <target>Mode</target>
-      </trans-unit>
-      <trans-unit resname="form.appventus_victoirecorebundle_widgetrendertype.children.route.label">
-        <source>form.appventus_victoirecorebundle_widgetrendertype.children.route.label</source>
-        <target>Nom de la route</target>
-      </trans-unit>
-      <trans-unit resname="form.appventus_victoirecorebundle_widgetrendertype.children.params.label">
-        <source>form.appventus_victoirecorebundle_widgetrendertype.children.params.label</source>
-        <target>Paramètres de la route</target>
-      </trans-unit>
-      <trans-unit resname="form.appventus_victoirecorebundle_widgetrendertype.children.params.vic_help_block">
-        <source>form.appventus_victoirecorebundle_widgetrendertype.children.params.vic_help_block</source>
-        <target>Copiez ici un tableau de paramètres au format json. Par ex. {"id": 1}</target>
-      </trans-unit>
-      <trans-unit resname="form.render.kind.choice.route">
-        <source>form.render.kind.choice.route</source>
-        <target>Route</target>
-      </trans-unit>
-      <trans-unit resname="form.render.kind.choice.widget_reference">
-        <source>form.render.kind.choice.widget_reference</source>
-        <target>Référence à un widget</target>
-      </trans-unit>
-      <trans-unit resname="form.render.widget_reference.label">
-        <source>form.render.widget_reference.label</source>
-        <target>Widget</target>
-      </trans-unit>
-      <trans-unit resname="form.render.kind.label">
-        <source>form.render.kind.label</source>
-        <target>Type</target>
-      </trans-unit>
-      <trans-unit resname="form.render.route.label">
-        <source>form.render.route.label</source>
-        <target>Route</target>
-      </trans-unit>
-      <trans-unit resname="form.render.route.params.label">
-        <source>form.render.route.params.label</source>
-        <target>Paramètres de la route</target>
+        <target>Render (utilisation avancée)</target>
       </trans-unit>
     </body>
   </file>

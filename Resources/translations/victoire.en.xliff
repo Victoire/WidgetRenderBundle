@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-11-27T23:12:28Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <body>
+      <trans-unit resname="widget.render.new.action.label">
+        <source>widget.render.new.action.label</source>
+        <target>Render (advanced)</target>
+      </trans-unit>
+      <trans-unit resname="modal.form.widget.type.render.label">
+        <source>modal.form.widget.type.render.label</source>
+        <target>Render (advanced)</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

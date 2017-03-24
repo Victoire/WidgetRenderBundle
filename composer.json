@@ -1,5 +1,5 @@
 {
-    "name": "friendsofvictoire/render-widget",
+    "name": "victoire/render-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Render widget",
     "keywords": [

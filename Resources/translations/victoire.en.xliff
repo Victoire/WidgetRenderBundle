@@ -2,11 +2,11 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
   <file date="2013-11-27T23:12:28Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <body>
-      <trans-unit resname="widget.render.new.action.label">
+      <trans-unit resname="widget.render.new.action.label" id="58e25b0bd97ff">
         <source>widget.render.new.action.label</source>
         <target>Render (advanced)</target>
       </trans-unit>
-      <trans-unit resname="modal.form.widget.type.render.label">
+      <trans-unit resname="modal.form.widget.type.render.label" id="58e25b0bd981b">
         <source>modal.form.widget.type.render.label</source>
         <target>Render (advanced)</target>
       </trans-unit>

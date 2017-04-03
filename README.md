@@ -1,15 +1,17 @@
+[![CircleCI](https://circleci.com/gh/Victoire/WidgetRenderBundle.svg?style=shield)](https://circleci.com/gh/Victoire/WidgetRenderBundle)
+
 Victoire DCMS Render Bundle
 ============
 
-##What is the purpose of this bundle
+## What is the purpose of this bundle
 
 This bundle gives you access to the *Render Widget*.
 
-##Set Up Victoire
+## Set Up Victoire
 
 If you haven't already, you can follow the steps to set up Victoire *[here](https://github.com/Victoire/victoire/blob/master/setup.md)*
 
-##Install the Bundle
+## Install the Bundle
 
 Run the following composer command :
 
@@ -17,7 +19,7 @@ Run the following composer command :
 
 The render bundle handles Bootstrap and Foundation view.
 
-###Reminder
+### Reminder
 
 Do not forget to add the bundle in your AppKernel !
 

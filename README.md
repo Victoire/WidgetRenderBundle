@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/Victoire/WidgetRenderBundle.svg?style=shield)](https://circleci.com/gh/Victoire/WidgetRenderBundle)
 
-Victoire DCMS Render Bundle
+Victoire Render Bundle
 ============
 
 ## What is the purpose of this bundle
@@ -15,7 +15,7 @@ If you haven't already, you can follow the steps to set up Victoire *[here](http
 
 Run the following composer command :
 
-    php composer.phar require friendsofvictoire/render-widget
+    php composer.phar require victoire/render-widget
 
 The render bundle handles Bootstrap and Foundation view.
 

@@ -1,6 +1,6 @@
 victoire_core:
     widgets:
         Render:
-            class: "Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender"
+            class: Victoire\Widget\RenderBundle\Entity\WidgetRender
             name: Render
             cache: false

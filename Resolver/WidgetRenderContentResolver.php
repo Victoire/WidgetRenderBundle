@@ -2,11 +2,15 @@
 
 namespace Victoire\Widget\RenderBundle\Resolver;
 
+use Symfony\Component\HttpFoundation\RequestStack;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
 
 class WidgetRenderContentResolver extends BaseWidgetContentResolver
 {
+    /** @var  RequestStack */
+    private $requestStack;
+
     /**
      * Get the business entity content.
      *
@@ -67,5 +71,27 @@ class WidgetRenderContentResolver extends BaseWidgetContentResolver
             $params[$key] = $template->render($vars);
         }
         $widget->setParams($params);
+    }
+
+    /**
+     * Get the static content of the widget.
+     *
+     * @param Widget $widget
+     * @return array
+     */
+    public function getWidgetStaticContent(Widget $widget)
+    {
+        $parameters = parent::getWidgetStaticContent($widget);
+        $curentRequest = $this->requestStack->getCurrentRequest();
+
+        return array_merge($parameters, $curentRequest->request->all(), ['_locale' => $curentRequest->getLocale()]);
+    }
+
+    /**
+     * @param RequestStack $requestStack
+     */
+    public function setRequestStack(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
     }
 }

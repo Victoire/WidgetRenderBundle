@@ -3,6 +3,7 @@
 namespace Victoire\Widget\RenderBundle\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
@@ -46,7 +47,7 @@ class WidgetRenderType extends WidgetType
                 'choices_as_values' => true,
             ])
             ->add('route', null, ['label' => 'form.render.route.label'])
-            ->add($builder->create('params', 'text', [
+            ->add($builder->create('params', TextType::class, [
                 'label'          => 'form.render.route.params.label',
                 'vic_help_block' => 'form.appventus_victoirecorebundle_widgetrendertype.children.params.vic_help_block',
                 ]

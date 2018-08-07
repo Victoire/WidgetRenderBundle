@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if kind == 'route' %}
-    {% render(path(route, params|merge(app.request.query.all))) %}
+    {% render(path(route, params|merge(app.request.query.all)|merge({'widgetId': widget.id}))) %}
 {% else %}
     <div class="vic-render-widget-container">
         {{ cms_widget(relatedWidget) }}

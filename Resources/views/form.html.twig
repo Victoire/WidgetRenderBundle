@@ -1,19 +1,26 @@
-<div id="picker-{{ form.kind.vars.data }}" class="vic-tab-pane vic-active">
+<div id="picker-{{ form.kind.vars.data }}-{{ form.kind.vars.id }}" class="vic-tab-pane vic-active">
     {{ form_start(form) }}
-        {{ form_row(form.kind) }}
+    {% if form.children.mode.vars.value == 'entity' %}
+        {{ form_row(form.fields) }}
+        {{ form_row(form.entity_proxy) }}
+    {% elseif form.children.mode.vars.value == 'query' %}
+        {{ form_row(form.query) }}
+        {{ form_row(form.fields) }}
+    {% endif %}
+    {{ form_row(form.kind) }}
         <div id="kind-{{ constant('Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender::KIND_WIDGET_REFERENCE') }}" class="render-kind" {% if form.vars.value.kind == "route" %}style="display:none"{% endif %}>
             {{ form_row(form.relatedWidget) }}
         </div>
         <div id="kind-{{ constant('Victoire\\Widget\\RenderBundle\\Entity\\WidgetRender::KIND_ROUTE') }}" class="render-kind" {% if form.vars.value.kind != "route" %}style="display:none"{% endif %}>
-           {{ form_row(form.route) }}
-           {{ form_row(form.params) }}
+            {{ form_row(form.route) }}
+            {{ form_row(form.params) }}
         </div>
     {{ form_rest(form) }}
     {{ form_end(form) }}
 </div>
 <script type="text/javascript">
-$vic('#victoire_widget_form_render_kind').change(function() {
-    $vic('.render-kind').hide();
-    $vic('#kind-'+$vic(this).val()).show();
-});
+    $vic('#{{ form.kind.vars.id }}').change(function() {
+        $vic('.render-kind','#picker-{{ form.kind.vars.data }}-{{ form.kind.vars.id }}').hide();
+        $vic('#kind-'+$vic(this).val(),'#picker-{{ form.kind.vars.data }}-{{ form.kind.vars.id }}').show();
+    });
 </script>
